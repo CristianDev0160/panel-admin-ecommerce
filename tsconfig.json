@@ -1,34 +1,24 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": ["es2019"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": false,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "noImplicitAny": false,
-    "paths": {
-      "gatsby": ["./src/compat/gatsby-compat.tsx"],
-      "@reach/router": ["./src/compat/reach-router-compat.tsx"]
-    },
-    "noErrorTruncation": true
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "skipLibCheck": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  // ts-node overrides for Storybook.
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  }
+  "include": [
+    "src",
+    "tsup.config.ts",
+    "webpack.config.dev.ts",
+    "src/node/webpack/get-webpack-config.ts"
+  ],
+  "exclude": ["node_modules", "ui", "./src/**/__tests__"]
 }
